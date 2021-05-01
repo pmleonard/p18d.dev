@@ -15,10 +15,10 @@ jobs:
       run: |
         echo "pwd"
         pwd
-        echo "ls -lha"
-        ls -lha
-        echo "github.action_path"
-        echo ${{ github.action_path }}
+        echo "ls"
+        ls
+        echo "github.ref"
+        echo ${{ github.ref }}
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
