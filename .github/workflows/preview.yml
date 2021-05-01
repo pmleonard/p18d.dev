@@ -11,12 +11,10 @@ jobs:
     name: Copy preview branches to p18d branch subdirectory
     runs-on: ubuntu-latest
     steps:
-    - name: copy file
-      uses: canastro/copy-file-action@master
-      with:
-        source: "docs/*"
-        target: "docs/preview/"
     - name: Copy docs directory to branch directory in preview
+    - uses: actions/checkout@master
+      with:
+        ref: ${{ github.ref }}
       run: |
         cd ../
         cd ../
