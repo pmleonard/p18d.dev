@@ -19,7 +19,7 @@ jobs:
     - name: copy p18d
       run: |
         mkdir -p temp/docs/preview
-        cp -r branchp18d/ temp/
+        cp -r -v branchp18d/* temp/
       shell: bash
     - name: checkout preview
       uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
     - name: copy preview
       run: |
         mkdir -p temp2
-        cp -r branchpreview/docs/ temp2/preview/
+        cp -r branchpreview/docs/* temp2/preview/
         cp -r temp2/preview temp/docs/
       shell: bash
     - name: echo & ls
