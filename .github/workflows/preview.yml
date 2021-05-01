@@ -11,17 +11,28 @@ jobs:
     name: Copy preview branches to p18d branch subdirectory
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
+    - name: checkout p18d
+      uses: actions/checkout@v2
+      with:
+        ref: p18d
+    - name: copy p18d
+      run: |
+        mkdir -p p18d/docs
+        cp -r docs p18d/docs/
+        mkdir -p docs/preview/
+        cp -r preview/docs docs/preview/
+      shell: bash
+    - name: checkout preview
       uses: actions/checkout@v2
       with:
         ref: preview
-    - name: copy
+    - name: copy preview
       run: |
         cp -r docs preview
         mkdir -p docs/preview/docs
         cp -r preview docs/preview/docs/
       shell: bash
-    - name: Copy docs directory to branch directory in preview
+    - name: echo & ls
       run: |
         echo "cd docs"
         cd docs
