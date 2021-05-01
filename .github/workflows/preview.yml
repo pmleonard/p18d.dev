@@ -31,5 +31,6 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        dest-repo: 'preview'
+        dest-repo: "pmleonard/p18d.dev"
+        dest-branch: 'preview'
         dest-folder: 'docs/preview'
