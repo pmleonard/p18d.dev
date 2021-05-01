@@ -23,10 +23,3 @@ jobs:
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
-    - name: git-publish-subdir
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: self
-        BRANCH: p18d
-        FOLDER: docs/preview
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
