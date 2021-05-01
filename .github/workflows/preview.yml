@@ -26,7 +26,7 @@ jobs:
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
-    - uses: ${{ $branchname }}
+    - uses: actions/checkout@${{ github.ref | sed "s/refs\/heads\///" }}
     - name: test
       run: |
         echo "pwd"
