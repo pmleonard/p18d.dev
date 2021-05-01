@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copy docs directory to branch directory in preview
-      run: echo $PATH
+      run: |
+        pwd
+        ls -lha
       shell: bash
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
