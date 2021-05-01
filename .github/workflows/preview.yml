@@ -13,8 +13,14 @@ jobs:
     steps:
     - name: Copy docs directory to branch directory in preview
       run: |
+        echo "pwd"
         pwd
+        echo "ls -lha"
         ls -lha
+        echo "GITHUB_WORKSPACE"
+        echo ${{ env.GITHUB_WORKSPACE }}
+        echo "github.workspace"
+        echo ${{ github.workspace }}
       shell: bash
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
