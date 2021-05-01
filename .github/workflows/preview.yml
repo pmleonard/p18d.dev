@@ -32,7 +32,8 @@ jobs:
       shell: bash
     - name: copy
       run: |
-        cp -r docs docs/preview/
+        cp -r docs preview
+        cp -r preview docs/preview
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
       env:
