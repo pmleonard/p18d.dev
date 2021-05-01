@@ -1,0 +1,16 @@
+name: Preview Build
+on:
+  push:
+    branches-ignore: 
+    - main
+    - release/*
+    - www.p18d.dev
+  workflow_dispatch:
+jobs:
+  copypreview:
+    name: Copy preview branches to www.p18d.dev branch subdirectory
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@www.p18d.dev
+    - name: Copy docs directory to branch directory in preview
+      run: cp "docs/*" "docs/preview/${GITHUB_REF##*/}"
