@@ -28,7 +28,7 @@ jobs:
         path: branchpreview
     - name: copy preview
       run: |
-        mkdir -p temp2
+        mkdir -p temp2/preview
         cp -r branchpreview/docs/* temp2/preview/
         cp -r temp2/preview temp/docs/
       shell: bash
