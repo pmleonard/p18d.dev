@@ -12,10 +12,11 @@ jobs:
     name: Copy preview branches to p18d branch subdirectory
     runs-on: ubuntu-latest
     steps:
-    - name: Copy docs directory to branch directory in preview
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
       with:
         ref: $(echo ${{ github.ref }} | sed "s/refs\/heads\///" )
+    - name: Copy docs directory to branch directory in preview
       run: |
         echo "pwd"
         pwd
