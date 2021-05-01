@@ -13,9 +13,7 @@ jobs:
     steps:
     - name: Copy docs directory to branch directory in preview
       run: |
-        pwd
-        cp ${{ env.FOLDER }}/docs/ ${{ env.FOLDER }}/docs/preview/
-        #cp /home/runner/work/p18d.dev/p18d.dev/docs/ /home/runner/work/p18d.dev/p18d.dev/docs/preview/
+        cp ${{ env.GITHUB_WORKSPACE }}/docs/ ${{ env.GITHUB_WORKSPACE }}/docs/preview/
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
       env:
