@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copy docs directory to branch directory in preview
+    - uses: actions/checkout@v2
+      with:
+        ref: $(echo ${{ github.ref }} | sed "s/refs\/heads\///" )
       run: |
         echo "pwd"
         pwd
@@ -27,13 +30,3 @@ jobs:
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
-    - name: Copy
-      uses: andstor/copycat-action@v3
-      with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_branch: $(echo ${{ github.ref }} | sed "s/refs\/heads\///" )
-        src_path: docs
-        dst_path: /docs/preview/
-        dst_owner: pmleonard
-        dst_repo_name: p18d.dev
-        dst_branch: p18d
