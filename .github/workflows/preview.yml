@@ -18,12 +18,17 @@ jobs:
         cd ../
         cd ../
         cd ../
+        cd root
         echo "pwd"
         pwd
         echo "ls"
         ls
         echo "github.ref"
         echo ${{ github.ref }}
+        branch=${{ github.ref }}
+        branchname=$(echo "$branch" | sed "s/ref\/heads\///")
+        echo "branchname"
+        echo "$branchname"
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
