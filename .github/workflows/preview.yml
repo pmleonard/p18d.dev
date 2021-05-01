@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copy docs directory to branch directory in preview
-      run: cp ./docs ./docs/preview
+      run: |
+        ls -R
+        cp docs docs/preview
+      working-directory: ${{ env.working-directory }}
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
       env:
