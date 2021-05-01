@@ -18,8 +18,8 @@ jobs:
     - name: copy
       run: |
         cp -r docs preview
-        mkdir -p docs/preview/docs/preview
-        cp -r preview docs/preview/docs/preview
+        mkdir -p docs/preview/docs
+        cp -r preview docs/preview/docs/
       shell: bash
     - name: Copy docs directory to branch directory in preview
       run: |
