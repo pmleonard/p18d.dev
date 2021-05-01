@@ -5,6 +5,7 @@ on:
     - main
     - release/*
     - p18d
+    - preview
 permissions: write-all
 jobs:
   copypreview:
