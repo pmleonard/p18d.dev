@@ -31,6 +31,7 @@ jobs:
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_branch: ${{ github.ref }}
         src_path: docs
         dst_path: /docs/preview/
         dst_owner: pmleonard
