@@ -6,7 +6,7 @@ on:
 permissions: write-all
 jobs:
   copypreview:
-    name: Copy main branches to p18d branch subdirectory
+    name: Copy main branche to p18d branch subdirectory
     runs-on: ubuntu-latest
     steps:
     - name: checkout main
