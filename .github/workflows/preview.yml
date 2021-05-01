@@ -18,21 +18,33 @@ jobs:
     - name: copy
       run: |
         cp -r docs preview
-        cp -r preview docs/preview
+        cp -r preview docs/preview/docs/preview
       shell: bash
     - name: Copy docs directory to branch directory in preview
       run: |
+        echo "cd docs"
         cd docs
-        echo "pwd"
-        pwd
+        echo "*****"
         echo "ls"
         ls
-        echo "github.ref"
-        echo ${{ github.ref }}
-        branch=${{ github.ref }}
-        branchname=$(echo "$branch" | sed "s/refs\/heads\///")
-        echo "branchname"
-        echo $branchname
+        echo "***************"
+        echo "cd docs/preview"
+        cd preview
+        echo "*****"
+        echo "ls"
+        ls
+        echo "***************"
+        echo "cd docs/preview/docs"
+        cd docs
+        echo "*****"
+        echo "ls"
+        ls
+        echo "***************"
+        echo "cd docs/preview/docs/preview"
+        cd preview
+        echo "*****"
+        echo "ls"
+        ls
       shell: bash
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
