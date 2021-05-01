@@ -15,47 +15,39 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: p18d
+        path: branchp18d
     - name: copy p18d
       run: |
-        mkdir -p p18d/docs
-        cp -r docs p18d/docs/
-        mkdir -p docs/preview/
-        cp -r p18d/docs docs/preview/
+        mkdir -p temp/docs/preview
+        cp -r branchp18d temp/
       shell: bash
     - name: checkout preview
       uses: actions/checkout@v2
       with:
         ref: preview
+        path: branchpreview
     - name: copy preview
       run: |
-        cp -r docs preview
-        mkdir -p docs/preview/docs
-        cp -r preview docs/preview/docs/
+        cp -r branchpreview/docs temp/docs/preview/
       shell: bash
     - name: echo & ls
       run: |
-        echo "cd docs"
+        echo "cd temp"
+        cd temp
+        echo "ls"
+        echo "*****"
+        ls
+        echo "***************"
+        echo "cd temp/docs"
         cd docs
-        echo "*****"
         echo "ls"
+        echo "*****"
         ls
         echo "***************"
-        echo "cd docs/preview"
+        echo "cd temp/docs/preview"
         cd preview
-        echo "*****"
         echo "ls"
-        ls
-        echo "***************"
-        echo "cd docs/preview/docs"
-        cd docs
         echo "*****"
-        echo "ls"
-        ls
-        echo "***************"
-        echo "cd docs/preview/docs/preview"
-        cd preview
-        echo "*****"
-        echo "ls"
         ls
       shell: bash
     - name: git-publish-subdir
@@ -63,5 +55,5 @@ jobs:
       env:
         REPO: self
         BRANCH: p18d
-        FOLDER: docs/preview
+        FOLDER: temp
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
