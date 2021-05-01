@@ -13,6 +13,7 @@ jobs:
     steps:
     - name: Copy docs directory to branch directory in preview
       run: |
+        cd ../
         echo "pwd"
         pwd
         echo "ls"
