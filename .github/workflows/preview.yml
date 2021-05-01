@@ -13,12 +13,6 @@ jobs:
     steps:
     - name: Copy docs directory to branch directory in preview
       run: |
-        cd ../
-        cd ../
-        cd ../
-        cd ../
-        cd ../
-        cd root
         echo "pwd"
         pwd
         echo "ls"
@@ -26,9 +20,9 @@ jobs:
         echo "github.ref"
         echo ${{ github.ref }}
         branch=${{ github.ref }}
-        branchname=$(echo "$branch" | sed "s/ref\/heads\///")
+        branchname=$(echo $branch | sed "s/ref\/heads\///")
         echo "branchname"
-        echo "$branchname"
+        echo $branchname
         echo "github.workspace"
         echo ${{ github.workspace }}
       shell: bash
