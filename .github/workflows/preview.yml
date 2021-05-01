@@ -20,7 +20,7 @@ jobs:
         mkdir -p p18d/docs
         cp -r docs p18d/docs/
         mkdir -p docs/preview/
-        cp -r preview/docs docs/preview/
+        cp -r p18d/docs docs/preview/
       shell: bash
     - name: checkout preview
       uses: actions/checkout@v2
