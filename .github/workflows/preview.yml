@@ -20,17 +20,10 @@ jobs:
         echo "github.ref"
         echo ${{ github.ref }}
         branch=${{ github.ref }}
-        branchname=$(echo "$branch" | sed "s/refs\/heads\//actions\/checkout\@/")
+        branchname=$(echo "$branch" | sed "s/refs\/heads\///")
         echo "branchname"
         echo $branchname
         echo "github.workspace"
         echo ${{ github.workspace }}
-      shell: bash
-    - uses: actions/checkout@${{ github.ref | sed "s/refs\/heads\///" }}
-    - name: test
-      run: |
-        echo "pwd"
-        pwd
-        echo "ls"
-        ls
+        git checkout $branchname
       shell: bash
