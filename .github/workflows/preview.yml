@@ -20,9 +20,17 @@ jobs:
         echo "github.ref"
         echo ${{ github.ref }}
         branch=${{ github.ref }}
-        branchname=$(echo "$branch" | sed "s/refs\/heads\///")
+        branchname=$(echo "$branch" | sed "s/refs\/heads\//actions\/checkout\@/")
         echo "branchname"
         echo $branchname
         echo "github.workspace"
         echo ${{ github.workspace }}
+      shell: bash
+    - uses: ${{ $branchname }}
+    - name: test
+      run: |
+        echo "pwd"
+        pwd
+        echo "ls"
+        ls
       shell: bash
