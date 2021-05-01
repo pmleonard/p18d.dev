@@ -14,7 +14,6 @@ jobs:
     - name: Copy docs directory to branch directory in preview
       run: |
         ls -R
-        cp docs docs/preview
       working-directory: ${{ env.working-directory }}
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
