@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copy docs directory to branch directory in preview
-    - run: |
+      run: |
         cd ../
         cd ../
         cd ../
