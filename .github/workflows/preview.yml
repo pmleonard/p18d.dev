@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Copy docs directory to branch directory in preview
-    - uses: actions/checkout@${{ github.ref }}
     - run: |
         cd ../
         cd ../
