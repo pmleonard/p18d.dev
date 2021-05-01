@@ -25,5 +25,11 @@ jobs:
         echo $branchname
         echo "github.workspace"
         echo ${{ github.workspace }}
-        git checkout $branchname
       shell: bash
+    - name: Pushes to another repository folder
+    - uses: NoahDragon/action-push-repo-as-subdirectory-in-another-repo@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        dest-repo: 'preview'
+        dest-folder: 'docs/preview'
