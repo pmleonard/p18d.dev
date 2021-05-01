@@ -5,7 +5,7 @@ on:
     - main
     - release/*
     - p18d
-  workflow_dispatch:
+permissions: write-all
 jobs:
   copypreview:
     name: Copy preview branches to p18d branch subdirectory
