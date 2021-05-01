@@ -5,20 +5,12 @@ on:
     - main
     - release/*
     - p18d
-    - preview
 permissions: write-all
 jobs:
   copypreview:
     name: Copy preview branches to p18d branch subdirectory
     runs-on: ubuntu-latest
     steps:
-    - name: git-publish-subdir
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: self
-        BRANCH: preview
-        FOLDER: docs
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: checkout
       uses: actions/checkout@v2
       with:
