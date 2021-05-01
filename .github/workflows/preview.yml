@@ -19,7 +19,7 @@ jobs:
     - name: copy p18d
       run: |
         mkdir -p temp/docs/preview
-        cp -r branchp18d temp/
+        cp -r branchp18d/docs temp/docs/
       shell: bash
     - name: checkout preview
       uses: actions/checkout@v2
