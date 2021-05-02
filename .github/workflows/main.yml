@@ -37,5 +37,5 @@ jobs:
       env:
         REPO: self
         BRANCH: p18d
-        FOLDER: branchmain
+        FOLDER: temp
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
