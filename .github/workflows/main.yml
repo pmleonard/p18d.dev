@@ -23,7 +23,7 @@ jobs:
         ls
         echo "***************"
         echo "cd branchmain/docs"
-        cd branchmain
+        cd docs
         echo "ls"
         echo "*****"
         ls
