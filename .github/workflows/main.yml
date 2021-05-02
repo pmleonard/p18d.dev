@@ -14,15 +14,20 @@ jobs:
       with:
         ref: main
         path: branchmain
+    - name: copy main
+      run: |
+        mkdir -p temp
+        cp -r -v branchmain/* temp/
+      shell: bash
     - name: echo & ls
       run: |
-        echo "cd branchmain"
-        cd branchmain
+        echo "cd temp"
+        cd temp
         echo "ls"
         echo "*****"
         ls
         echo "***************"
-        echo "cd branchmain/docs"
+        echo "cd temp/docs"
         cd docs
         echo "ls"
         echo "*****"
