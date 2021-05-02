@@ -14,6 +14,19 @@ jobs:
       with:
         ref: main
         path: branchmain
+    - name: echo & ls
+      run: |
+        echo "cd branchmain"
+        cd branchmain
+        echo "ls"
+        echo "*****"
+        ls
+        echo "***************"
+        echo "cd branchmain/docs"
+        cd branchmain
+        echo "ls"
+        echo "*****"
+        ls
     - name: git-publish-subdir
       uses: s0/git-publish-subdir-action@develop
       env:
